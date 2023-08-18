@@ -20,8 +20,8 @@ const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, "not read yet");
 /**
  * Adds a new book to myLibrary.
  */
-function addBookToLibrary(book) {
-    myLibrary.push(book);
+function addBookToLibrary(book1) {
+    myLibrary.push(book1);
 }
 addBookToLibrary(book1);
 console.log(myLibrary);
