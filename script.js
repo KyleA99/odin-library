@@ -1,8 +1,5 @@
 const myLibrary = [];
 
-// Static example book.
-const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, "not read yet");
-
 /**
  * Constructor function that represents a book.
  * @param {string} title - The title of the book.
@@ -17,11 +14,14 @@ function Book(title, author, pageCount, bookRead) {
     this.bookRead = bookRead
 }
 
+// Static example book.
+const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, "not read yet");
+
 /**
- * Adds a new book to the myLibrary array.
+ * Adds a new book to myLibrary.
  */
-function addBookToLibrary() {
-    myLibrary.push(book1);
+function addBookToLibrary(book) {
+    myLibrary.push(book);
 }
-addBookToLibrary();
+addBookToLibrary(book1);
 console.log(myLibrary);
