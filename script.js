@@ -34,9 +34,18 @@ console.log(myLibrary);
  * @param {Object} book - The book object for which a card is to be created.
  */
 function createBookCard(book) {
-    const bookCard = document.createElement("p");
-    bookCard.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pageCount}, Read Status: ${book.bookRead}`;
-    bookCardContainer.appendChild(bookCard);
+    const bookTitle = document.createElement("p");
+    bookTitle.textContent = `Title: ${book.title}`;
+    const bookAuthor = document.createElement("p");
+    bookAuthor.textContent = `Author: ${book.author}`;
+    const bookPageCount = document.createElement("p");
+    bookPageCount.textContent = `Pages: ${book.pageCount}`;
+    const bookRead = document.createElement("p");
+    bookRead.textContent = `Read Status: ${book.bookRead}`;
+    bookCardContainer.appendChild(bookTitle);
+    bookCardContainer.appendChild(bookAuthor);
+    bookCardContainer.appendChild(bookPageCount);
+    bookCardContainer.appendChild(bookRead);
 }
 
 // Passes createBookCard() as callback and executes function for each book in myLibrary.
