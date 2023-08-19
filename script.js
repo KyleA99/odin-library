@@ -19,7 +19,8 @@ const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, "Have not read yet")
 const book2 = new Book("The Alchemist", "Paulo Coelho", 163, "Have read/completed");
 
 /**
- * Pushes books to myLibrary.
+ * Adds a book to the library.
+ * @param {Object} book - The book object to be added to the library.
  */
 function addBookToLibrary(book) {
     myLibrary.push(book);
@@ -28,9 +29,15 @@ addBookToLibrary(book1);
 addBookToLibrary(book2);
 console.log(myLibrary);
 
-// Loops through myLibrary and creates a new paragraph for each array item, with object properties displayed.
-myLibrary.forEach(function(book) {
+/**
+ * Creates a book card and appends it to the book card container.
+ * @param {Object} book - The book object for which a card is to be created.
+ */
+function createBookCard(book) {
     const bookCard = document.createElement("p");
     bookCard.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pageCount}, Read Status: ${book.bookRead}`;
     bookCardContainer.appendChild(bookCard);
-});
+}
+
+// Passes createBookCard() as callback and executes function for each book in myLibrary.
+myLibrary.forEach(createBookCard);
