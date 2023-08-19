@@ -1,5 +1,4 @@
 const myLibrary = [];
-const bookCardContainer = document.getElementById("book-card-container");
 
 /**
  * Constructor function that represents a book.
@@ -30,10 +29,13 @@ addBookToLibrary(book2);
 console.log(myLibrary);
 
 /**
- * Creates a book card and appends it to the book card container.
+ * Creates book card classes for each book and appends them to the book card container.
  * @param {Object} book - The book object for which a card is to be created.
  */
 function createBookCard(book) {
+    const bookCard = document.createElement("div");
+    bookCard.classList.add("book-card");
+    
     const bookTitle = document.createElement("p");
     bookTitle.textContent = `Title: ${book.title}`;
     const bookAuthor = document.createElement("p");
@@ -42,10 +44,14 @@ function createBookCard(book) {
     bookPageCount.textContent = `Pages: ${book.pageCount}`;
     const bookRead = document.createElement("p");
     bookRead.textContent = `Read Status: ${book.bookRead}`;
-    bookCardContainer.appendChild(bookTitle);
-    bookCardContainer.appendChild(bookAuthor);
-    bookCardContainer.appendChild(bookPageCount);
-    bookCardContainer.appendChild(bookRead);
+    
+    bookCard.appendChild(bookTitle);
+    bookCard.appendChild(bookAuthor);
+    bookCard.appendChild(bookPageCount);
+    bookCard.appendChild(bookRead);
+    
+    const bookCardContainer = document.getElementById("book-card-container");
+    bookCardContainer.appendChild(bookCard);
 }
 
 // Passes createBookCard() as callback and executes function for each book in myLibrary.

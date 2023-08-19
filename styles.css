@@ -1,0 +1,11 @@
+#book-card-container {
+    border: 3px solid red;
+}
+
+.book-card {
+    border: solid 2px blue;
+}
+
+#book-card-container p {
+    border: solid 3px orange;
+}
