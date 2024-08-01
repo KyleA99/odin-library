@@ -24,6 +24,7 @@ const book2 = new Book("The Alchemist", "Paulo Coelho", 163, "Have read/complete
 function addBookToLibrary(book) {
     myLibrary.push(book);
 }
+
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 console.log(myLibrary);
